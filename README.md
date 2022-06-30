@@ -1,6 +1,6 @@
 # Pet Store API
 
-[![Automated Testing](https://github.com/CommonGateway/PetStore/actions/workflows/tests.yml/badge.svg)](https://github.com/CommonGateway/PetStore/actions/workflows/tests.yml)
+[![Automated Testing](https://github.com/kevindh89/petstore/actions/workflows/tests.yml/badge.svg)](https://github.com/kevindh89/petstore/actions/workflows/tests.yml)
 
 
 This repository is an example of a [Common Gateway](https://github.com/CommonGateway) configuration for generating an [API](https://www.howtogeek.com/343877/what-is-an-api/). This example has been specifically set up to use as a template to create and use a repository which holds a API definiton as a OpenAPI Specification or setup and use a existing OpenAPI Specification as API. 
@@ -11,9 +11,9 @@ To start with creating or setting up a repository with a OpenAPI Specification s
 
 Quick links about this repository:
 
-- [API Documentation (redocly is a API documentation generator)](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml&nocors)
-- [API Definition (yaml or json file)](https://github.com/CommonGateway/PetStore/blob/main/OAS.yaml)
-- [Public Code (file about this API and makes it searchable)](https://github.com/CommonGateway/PetStore/blob/main/publiccode.yaml)
+- [API Documentation (redocly is a API documentation generator)](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/kevindh89/petstore/main/OAS.yaml&nocors)
+- [API Definition (yaml or json file)](https://github.com/kevindh89/petstore/blob/main/OAS.yaml)
+- [Public Code (file about this API and makes it searchable)](https://github.com/kevindh89/petstore/blob/main/publiccode.yaml)
 - [Stoplight.io (OAS editing tool)](https://conduction.stoplight.io/docs/pet-store)
 
 
@@ -29,7 +29,7 @@ It is also possible to [use this repository with its API with the skeleton-app](
 
 ## Creating your repository from this template
 
-To use this repository as a template, you will need a [GitHub account](https://github.com/login). Make sure you have a GitHub account and are logged in on GitHub. When you are logged in you can [use this template](https://github.com/CommonGateway/PetStoreAPI/generate), select the owner and fill in a nice name for your new repository. After creating your new repository, please follow these steps:
+To use this repository as a template, you will need a [GitHub account](https://github.com/login). Make sure you have a GitHub account and are logged in on GitHub. When you are logged in you can [use this template](https://github.com/kevindh89/petstoreAPI/generate), select the owner and fill in a nice name for your new repository. After creating your new repository, please follow these steps:
 
 - Go to your new created GitHub repository.
 - Replace the OAS.yaml (or .json) file in the repository root with [your own OpenAPI Specification](#your-openapi-specification).
@@ -119,7 +119,7 @@ First of all:
 If you installed Git without GUI:
 
 - Open a command line interface, for windows you can press `Win+R` and search for `cmd`.
-- Execute the command `git clone (link you copied) (directory you want to clone the repository to`, an example: `git clone https://github.com/CommonGateway/PetStoreAPI.git C:\Users\JohnDoe\Projects`.
+- Execute the command `git clone (link you copied) (directory you want to clone the repository to`, an example: `git clone https://github.com/kevindh89/petstoreAPI.git C:\Users\JohnDoe\Projects`.
 - Change to that directory with `cd (directory where repository is cloned to)`, an example: `cd C:\Users\JohnDoe\Projects\PetStore`.
 
 Skip this if you already installed Git without GUI and followed the above steps, but if you installed Git with a GUI (GitKraken) and want to clone with that GUI:
@@ -136,7 +136,7 @@ Running this repository with its API (as Open API Specification) can be done thr
 If you are familiar with Docker, Git and a http client you can execute the following commands and tests your API project on localhost/api.
 
 ```bash
-git clone https://github.com/CommonGateway/PetStoreAPI.git
+git clone https://github.com/kevindh89/petstoreAPI.git
 cd PetStoreAPI
 docker-compose up
 ```
@@ -188,7 +188,7 @@ If you change your API and your OAS, you can re-import that file and re-generate
 
 // TODO more explaination
 To run the API on a online Gateway, the `helm` secret `PUBLICCODE` must be set with the url to the raw `publiccode.yaml`, like:
-`https://raw.githubusercontent.com/CommonGateway/PetStoreAPI/main/publiccode.yaml`
+`https://raw.githubusercontent.com/kevindh89/petstoreAPI/main/publiccode.yaml`
 
 If set you can run the following command in a PHP pod:
 
