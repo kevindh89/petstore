@@ -1,50 +1,84 @@
 openapi: 3.1.0
 x-stoplight:
-  id: 9g6byh3ir5vrc
+  id: rlz8hymfu7z3h
 info:
-  title: petstore
+  title: Eerste inschrijving
   version: '1.0'
+  contact:
+    name: Kevin de Heer
+    url: 'https://www.simgroep.nl'
+    email: k.deheer@simgroep.nl
+  description: First registration API definition
+  license:
+    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+    name: License (MIT)
+  termsOfService: 'https://www.simgroep.nl'
 servers:
   - url: 'http://localhost:3000'
 paths:
-  /pet:
-    get:
-      summary: Your GET endpoint
-      tags: []
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Pet'
-      operationId: get-pets
+  /first-registration:
     post:
       summary: ''
-      operationId: post-pets
+      operationId: post-first-registration
       responses:
         '200':
           description: OK
-        '':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Pet'
+      description: Submit a new first registration
       requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Pet'
-    parameters: []
+        $ref: '#/components/requestBodies/Eerste-inschrijving'
 components:
-  schemas:
-    Pet:
-      title: Pet
-      x-stoplight:
-        id: 78u5wz1ehhtq6
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
+  schemas: {}
+  requestBodies:
+    Eerste-inschrijving:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              documentType:
+                type: string
+                enum:
+                  - passport
+                  - id
+              documentIssueDate:
+                type: string
+                format: date
+              documentExpiryDate:
+                type: string
+                format: date
+              issueByInstancy:
+                type: string
+              foreignPersonalId:
+                type: string
+              surname:
+                type: string
+              previousSurname:
+                type: string
+              firstname:
+                type: string
+              dateOfBirth:
+                type: string
+                format: date
+              birthplace:
+                type: string
+              countryOfBirth:
+                type: string
+              nationality:
+                type: string
+              maritalStatus:
+                type: string
+                enum:
+                  - married
+                  - registeredPartnership
+                  - unmarried
+              gender:
+                type: string
+                enum:
+                  - male
+                  - female
+              phoneNumber:
+                type: string
+              emailAddress:
+                type: string
+                format: email
+      description: First registration form data
