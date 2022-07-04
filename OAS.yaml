@@ -1,135 +1,50 @@
 openapi: 3.1.0
 x-stoplight:
-  id: rlz8hymfu7z3h
+  id: 9g6byh3ir5vrc
 info:
-  title: Eerste inschrijving
+  title: petstore
   version: '1.0'
-  contact:
-    name: Kevin de Heer
-    url: 'https://www.simgroep.nl'
-    email: k.deheer@simgroep.nl
-  description: First registration API definition
-  license:
-    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
-    name: License (MIT)
-  termsOfService: 'https://www.simgroep.nl'
 servers:
   - url: 'http://localhost:3000'
 paths:
-  /first-registration:
-    post:
-      summary: ''
-      operationId: post-first-registration
+  /pet:
+    get:
+      summary: Your GET endpoint
+      tags: []
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FirstRegistration'
-      description: Submit a new first registration
+                $ref: '#/components/schemas/Pet'
+      operationId: get-pets
+    post:
+      summary: ''
+      operationId: post-pets
+      responses:
+        '200':
+          description: OK
+        '':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FirstRegistration'
+              $ref: '#/components/schemas/Pet'
+    parameters: []
 components:
   schemas:
-    FirstRegistration:
+    Pet:
+      title: Pet
+      x-stoplight:
+        id: 78u5wz1ehhtq6
       type: object
-      x-examples:
-        example-1:
-          documentType:
-            type: string
-            enum:
-              - passport
-              - id
-          documentIssueDate:
-            type: string
-            format: date
-          documentExpiryDate:
-            type: string
-            format: date
-          issueByInstancy:
-            type: string
-          foreignPersonalId:
-            type: string
-          surname:
-            type: string
-          previousSurname:
-            type: string
-          firstname:
-            type: string
-          dateOfBirth:
-            type: string
-            format: date
-          birthplace:
-            type: string
-          countryOfBirth:
-            type: string
-          nationality:
-            type: string
-          maritalStatus:
-            type: string
-            enum:
-              - married
-              - registeredPartnership
-              - unmarried
-          gender:
-            type: string
-            enum:
-              - male
-              - female
-          phoneNumber:
-            type: string
-          emailAddress:
-            type: string
-            format: email
       properties:
-        documentType:
+        id:
           type: string
-          enum:
-            - passport
-            - id
-        documentIssueDate:
+        name:
           type: string
-          format: date
-        documentExpiryDate:
-          type: string
-          format: date
-        issueByInstancy:
-          type: string
-        foreignPersonalId:
-          type: string
-        surname:
-          type: string
-        previousSurname:
-          type: string
-        firstname:
-          type: string
-        dateOfBirth:
-          type: string
-          format: date
-        birthplace:
-          type: string
-          format: date
-        countryOfBirth:
-          type: string
-        nationality:
-          type: string
-        maritalStatus:
-          type: string
-          enum:
-            - married
-            - registeredPartnership
-            - unmarried
-        gender:
-          type: string
-          enum:
-            - male
-            - female
-        phoneNumber:
-          type: string
-        emailAddress:
-          type: string
-          format: email
