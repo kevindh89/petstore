@@ -26,16 +26,16 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/first-registration'
+                $ref: '#/components/schemas/FirstRegistration'
       description: Submit a new first registration
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/first-registration'
+              $ref: '#/components/schemas/FirstRegistration'
 components:
   schemas:
-    first-registration:
+    FirstRegistration:
       type: object
       x-examples:
         example-1:
@@ -133,4 +133,3 @@ components:
         emailAddress:
           type: string
           format: email
-  requestBodies: {}
