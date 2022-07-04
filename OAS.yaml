@@ -23,9 +23,16 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/first-registration'
       description: Submit a new first registration
       requestBody:
-        $ref: '#/components/requestBodies/FirstRegistrationRequestBody'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/first-registration'
 components:
   schemas:
     first-registration:
@@ -126,9 +133,4 @@ components:
         emailAddress:
           type: string
           format: email
-  requestBodies:
-    FirstRegistrationRequestBody:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/first-registration'
+  requestBodies: {}
