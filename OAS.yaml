@@ -28,7 +28,7 @@ paths:
         $ref: '#/components/requestBodies/FirstRegistrationRequestBody'
 components:
   schemas:
-    FirstRegistration:
+    first-registration:
       type: object
       x-examples:
         example-1:
@@ -131,4 +131,4 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/FirstRegistration'
+            $ref: '#/components/schemas/first-registration'
