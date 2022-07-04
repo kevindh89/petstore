@@ -45,6 +45,7 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/FirstRegistration'
+      description: Get all submitted first registrations
 components:
   schemas:
     FirstRegistration:
@@ -124,7 +125,6 @@ components:
           format: date
         birthplace:
           type: string
-          format: date
         countryOfBirth:
           type: string
         nationality:
