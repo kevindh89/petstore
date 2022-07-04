@@ -25,60 +25,110 @@ paths:
           description: OK
       description: Submit a new first registration
       requestBody:
-        $ref: '#/components/requestBodies/Eerste-inschrijving'
+        $ref: '#/components/requestBodies/FirstRegistrationRequestBody'
 components:
-  schemas: {}
+  schemas:
+    FirstRegistration:
+      type: object
+      x-examples:
+        example-1:
+          documentType:
+            type: string
+            enum:
+              - passport
+              - id
+          documentIssueDate:
+            type: string
+            format: date
+          documentExpiryDate:
+            type: string
+            format: date
+          issueByInstancy:
+            type: string
+          foreignPersonalId:
+            type: string
+          surname:
+            type: string
+          previousSurname:
+            type: string
+          firstname:
+            type: string
+          dateOfBirth:
+            type: string
+            format: date
+          birthplace:
+            type: string
+          countryOfBirth:
+            type: string
+          nationality:
+            type: string
+          maritalStatus:
+            type: string
+            enum:
+              - married
+              - registeredPartnership
+              - unmarried
+          gender:
+            type: string
+            enum:
+              - male
+              - female
+          phoneNumber:
+            type: string
+          emailAddress:
+            type: string
+            format: email
+      properties:
+        documentType:
+          type: string
+          enum:
+            - passport
+            - id
+        documentIssueDate:
+          type: string
+          format: date
+        documentExpiryDate:
+          type: string
+          format: date
+        issueByInstancy:
+          type: string
+        foreignPersonalId:
+          type: string
+        surname:
+          type: string
+        previousSurname:
+          type: string
+        firstname:
+          type: string
+        dateOfBirth:
+          type: string
+          format: date
+        birthplace:
+          type: string
+          format: date
+        countryOfBirth:
+          type: string
+        nationality:
+          type: string
+        maritalStatus:
+          type: string
+          enum:
+            - married
+            - registeredPartnership
+            - unmarried
+        gender:
+          type: string
+          enum:
+            - male
+            - female
+        phoneNumber:
+          type: string
+        emailAddress:
+          type: string
+          format: email
   requestBodies:
-    Eerste-inschrijving:
+    FirstRegistrationRequestBody:
       content:
         application/json:
           schema:
-            type: object
-            properties:
-              documentType:
-                type: string
-                enum:
-                  - passport
-                  - id
-              documentIssueDate:
-                type: string
-                format: date
-              documentExpiryDate:
-                type: string
-                format: date
-              issueByInstancy:
-                type: string
-              foreignPersonalId:
-                type: string
-              surname:
-                type: string
-              previousSurname:
-                type: string
-              firstname:
-                type: string
-              dateOfBirth:
-                type: string
-                format: date
-              birthplace:
-                type: string
-              countryOfBirth:
-                type: string
-              nationality:
-                type: string
-              maritalStatus:
-                type: string
-                enum:
-                  - married
-                  - registeredPartnership
-                  - unmarried
-              gender:
-                type: string
-                enum:
-                  - male
-                  - female
-              phoneNumber:
-                type: string
-              emailAddress:
-                type: string
-                format: email
-      description: First registration form data
+            $ref: '#/components/schemas/FirstRegistration'
